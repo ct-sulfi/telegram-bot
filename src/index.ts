@@ -60,14 +60,14 @@ const getCTTPrice = async ()=> {
         const ctt = request?.result?.list[0]
         const price = `Symbol: ${ctt.symbol} lowPrice24h: ${ctt.lowPrice24h} prevPrice24h: ${ctt.prevPrice24h}\n Current Price: ${ctt.lastPrice}`
         return price
-    } catch (error) {
-        console.log(error)
+    } catch (error: any) {
+        console.log("error request api")
         return "error request api"
     }
 }
 
 // Schedule the task to run every 5 minutes
-cron.schedule('*/5 * * * *', async () => {
+cron.schedule('*/1 * * * *', async () => {
     console.log('Fetching Bybit data...');
     const price = await getCTTPrice();
     bot.sendMessage(CHATID, price);
