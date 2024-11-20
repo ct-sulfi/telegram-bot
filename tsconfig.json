@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",          // Specifies the output language level
+    "module": "CommonJS",        // Module system for Node.js
+    "strict": true,              // Enable all strict type-checking options
+    "esModuleInterop": true,     // Allow ES module imports in CommonJS
+    "skipLibCheck": true,        // Skip type checking of declaration files
+    "outDir": "./dist",          // Output directory for compiled files
+    "rootDir": "./src"           // Root directory of source files
+  },
+  "include": ["src"],            // Files or directories to compile
+  "exclude": ["node_modules"]    // Files or directories to ignore
+}
